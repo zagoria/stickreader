@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "egyptian-arabic-tutor",
+  "name": "Egyptian Arabic Tutor",
+  "group": "community",
+  "catalogSection": "community",
+  "category": "personal",
+  "mode": "flash",
+  "status": "experimental",
+  "summary": "A daily Egyptian Arabic reading text and vocabulary flashcard trainer, with Greek and Chinese translations.",
+  "description": "Egyptian Arabic Tutor shows a short Egyptian-Arabic reading passage (with Greek and Chinese translations) and a swipeable vocabulary flashcard deck on Sticky's e-ink screen. New content can be synced daily over WiFi from a URL you host (see the project README for the companion content-generation pipeline), or loaded manually onto the SD card. No account or cloud service from this project is required to use it offline with manually-loaded content.",
+  "author": {
+    "name": "YOUR_NAME_HERE",
+    "url": "YOUR_PROFILE_URL_HERE"
+  },
+  "origin": {
+    "name": "Project repository",
+    "url": "YOUR_REPO_URL_HERE"
+  },
+  "source": {
+    "url": "YOUR_REPO_URL_HERE",
+    "license": "MIT",
+    "path": "source"
+  },
+  "support": {
+    "url": "YOUR_REPO_URL_HERE/issues"
+  },
+  "documentationUrl": "YOUR_REPO_URL_HERE#readme",
+  "compatibility": {
+    "devices": ["reterminal-sticky"],
+    "notes": "NOT YET VERIFIED on physical hardware. The e-ink (SSD1677) and touch (GT911) drivers are an integration step against community reference drivers — see README_DRIVERS.md. Remove this note once physical-device testing (per the Playground contribution checklist) is complete."
+  },
+  "assets": {
+    "preview": "assets/preview.png",
+    "previewAlt": "Egyptian Arabic Tutor home screen mockup on reTerminal Sticky, showing the Home/Read/Train menu bar"
+  },
+  "tags": ["arabic", "language-learning", "flashcards", "e-ink", "offline"],
+  "build": {
+    "system": "platformio",
+    "environment": "sticky",
+    "projectPath": "source"
+  },
+  "flash": {
+    "versions": [
+      {
+        "version": "0.1.0",
+        "channel": "experimental",
+        "sourceBuild": true
+      }
+    ],
+    "notes": [
+      {
+        "title": "Driver integration required before first build",
+        "description": "hal_display.cpp, hal_touch.cpp and hal_buzzer.cpp must be filled in from a verified community driver before this compiles — see README_DRIVERS.md. This is not yet done in this submission."
+      },
+      {
+        "title": "Set WiFi and content URL before flashing",
+        "description": "Edit WIFI_SSID, WIFI_PASSWORD and CONTENT_MANIFEST_URL in source/src/config.h. Without a reachable content URL, load a day package onto the SD card manually instead."
+      }
+    ]
+  }
+}

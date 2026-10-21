@@ -1,0 +1,4 @@
+Pillow>=10.0
+arabic-reshaper>=3.0
+python-bidi>=0.4
+anthropic>=0.40  # only needed if using --auto (API-generated text)
